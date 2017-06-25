@@ -5,8 +5,6 @@ using UnityEngine;
 public class ThirdPersonCam : MonoBehaviour {
     public Transform lookAt;
     public Camera cam;
-    public float x = 3;
-    public float y = -20;
     private float distance = 5;
     private float currX = 0;
     
@@ -17,22 +15,20 @@ public class ThirdPersonCam : MonoBehaviour {
         
         currX += Input.GetAxis("Mouse X");
         distance -= Input.GetAxis("Mouse ScrollWheel");
-        distance = Mathf.Clamp(distance, 1, 10);
+        distance = Mathf.Clamp(distance, 3, 13);
         
     }
 
     void LateUpdate()
     {
         Vector3 dir = new Vector3(0,0, -distance);
-        //float t = -(distance * 4);
         Quaternion rot = Quaternion.Euler(0, currX, 0);
         Vector3 moveUp = new Vector3(0, distance / 3, 0);
+
         cam.transform.position = lookAt.position + rot*dir + moveUp;
 
         cam.transform.LookAt(lookAt.position);
-
-
-         //Debug.Log(distance);
+        
     }
 	
 }

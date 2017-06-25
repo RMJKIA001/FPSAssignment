@@ -34,27 +34,15 @@ public class PlayerCont : MonoBehaviour {
         float vert = Input.GetAxis("Vertical");
         float hori = Input.GetAxis("Horizontal");
         velocity += Physics.gravity.y * Time.deltaTime;
-
-        if (Input.GetKey(KeyCode.LeftShift))
+        bool isWalking = (vert != 0 || hori != 0);
+        if (Input.GetKey(KeyCode.LeftShift) && isWalking)
         {
             vert *= 2f;
             isRunning = true;
-            ani.SetBool("Running", true);
-            //Debug.Log(ani.GetBool("Running"));
         }
         else
         {
             isRunning = false;
-            ani.SetBool("Running", false);
-            //Debug.Log(ani.GetBool("Running"));
-            if (vert != 0 || hori != 0)
-            {
-                ani.SetBool("Walking", true);
-            }
-            else
-            {
-                ani.SetBool("Walking", false);
-            }
         }
         if (Input.GetButtonDown("Jump") && cont.isGrounded)
         {
@@ -62,6 +50,25 @@ public class PlayerCont : MonoBehaviour {
         }
         Vector3 move = new Vector3(hori*speed, velocity, vert*speed); 
         cont.Move(transform.rotation*move*Time.deltaTime);
-
+        animate(isWalking);
 	}
+
+    void animate(bool walk)
+    {
+        if(isRunning)
+        {
+            ani.SetBool("Walking", false);
+            ani.SetBool("Running", true);
+        }
+        else if(walk)
+        {
+            ani.SetBool("Running", false);
+            ani.SetBool("Walking", true);
+        }
+        else
+        {
+            ani.SetBool("Walking", false);
+            ani.SetBool("Running", false);
+        }
+    }
 }
