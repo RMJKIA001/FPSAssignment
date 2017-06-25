@@ -32,7 +32,7 @@ public class ThirdPersonCam : MonoBehaviour {
         cam.transform.LookAt(lookAt.position);
 
 
-         Debug.Log(distance);
+         //Debug.Log(distance);
     }
 	
 }

@@ -16,6 +16,7 @@ public class PlayerCont : MonoBehaviour {
     void Start () {
         Cursor.visible = false;
         cont = GetComponent<CharacterController>();
+        ani = GetComponentInChildren<Animator>();
     }
 	
 	// Update is called once per frame
@@ -33,19 +34,34 @@ public class PlayerCont : MonoBehaviour {
         float vert = Input.GetAxis("Vertical");
         float hori = Input.GetAxis("Horizontal");
         velocity += Physics.gravity.y * Time.deltaTime;
-        if (Input.GetKey(KeyCode.LeftShift) )
-        {
-            vert *= 2f ;
-            isRunning = true;
-        }
 
-        else { isRunning = false; }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            vert *= 2f;
+            isRunning = true;
+            ani.SetBool("Running", true);
+            //Debug.Log(ani.GetBool("Running"));
+        }
+        else
+        {
+            isRunning = false;
+            ani.SetBool("Running", false);
+            //Debug.Log(ani.GetBool("Running"));
+            if (vert != 0 || hori != 0)
+            {
+                ani.SetBool("Walking", true);
+            }
+            else
+            {
+                ani.SetBool("Walking", false);
+            }
+        }
         if (Input.GetButtonDown("Jump") && cont.isGrounded)
         {
             velocity = jumpSpeed;
         }
-        Vector3 move = new Vector3(hori*speed, velocity, vert*speed);
-         
+        Vector3 move = new Vector3(hori*speed, velocity, vert*speed); 
         cont.Move(transform.rotation*move*Time.deltaTime);
+
 	}
 }
