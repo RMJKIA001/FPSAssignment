@@ -23,7 +23,7 @@ public class PlayerCont : MonoBehaviour {
         transform.Rotate(0,rotX,0);
         
         currCam -= rotY ;
-        float newRot = Mathf.Clamp(currCam,-70,70);
+        float newRot = Mathf.Clamp(currCam,-50,50);
         cam.transform.localRotation = Quaternion.Euler(newRot, 0, 0);
         //cam.transform.Rotate(-newRot,0,0);
 
@@ -32,9 +32,9 @@ public class PlayerCont : MonoBehaviour {
         float vert = Input.GetAxis("Vertical");
         float hori = Input.GetAxis("Horizontal");
         velocity += Physics.gravity.y * Time.deltaTime;
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.LeftShift) )
         {
-            vert += 2;
+            vert *= 2f ;
         }
         if (Input.GetButtonDown("Jump") && cont.isGrounded)
         {
