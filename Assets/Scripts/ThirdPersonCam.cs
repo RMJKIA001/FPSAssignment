@@ -10,25 +10,29 @@ public class ThirdPersonCam : MonoBehaviour {
     private float distance = 5;
     private float currX = 0;
     
+
     void Update()
     {
         //currY += Input.GetAxis("Mouse Y");
+        
         currX += Input.GetAxis("Mouse X");
         distance -= Input.GetAxis("Mouse ScrollWheel");
-        distance = Mathf.Clamp(distance, 0.5f, 6);
+        distance = Mathf.Clamp(distance, 1, 10);
         
     }
 
     void LateUpdate()
     {
-        float temp = (3 * distance) / 5;
-        Vector3 dir = new Vector3(0,x, -distance);
-        float t = -(distance * 4);
-        Quaternion rot = Quaternion.Euler(y, currX, 0);
-        cam.transform.position = lookAt.position + rot*dir;
+        Vector3 dir = new Vector3(0,0, -distance);
+        //float t = -(distance * 4);
+        Quaternion rot = Quaternion.Euler(0, currX, 0);
+        Vector3 moveUp = new Vector3(0, distance / 3, 0);
+        cam.transform.position = lookAt.position + rot*dir + moveUp;
+
         cam.transform.LookAt(lookAt.position);
 
-        Debug.Log(distance + "  "+temp + "  "+t);
+
+         Debug.Log(distance);
     }
 	
 }

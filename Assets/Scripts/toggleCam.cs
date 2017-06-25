@@ -10,8 +10,9 @@ public class toggleCam : MonoBehaviour {
 	void Start () {
         //fps.enabled = true;
         //tp.enabled = false;
-        fps.gameObject.SetActive(true);
-        tp.gameObject.SetActive(false);
+        //fps.gameObject.SetActive(true);
+        //tp.gameObject.SetActive(false);
+        fps.enabled = true;
         tp.enabled = false;
 	}
 	
@@ -23,16 +24,16 @@ public class toggleCam : MonoBehaviour {
             //Debug.Log("Third Person " + tp.enabled + "\nFirst Person " + fps.enabled);
             if (fps.enabled)
             {
-                fps.gameObject.SetActive(false);
+                //fps.gameObject.SetActive(false);
                 fps.enabled = false;
-                tp.gameObject.SetActive(true);
+                //tp.gameObject.SetActive(true);
                 tp.enabled = true;
             }
             else if(tp.enabled)
             {
-                tp.gameObject.SetActive(false);
+                //tp.gameObject.SetActive(false);
                 tp.enabled = false;
-                fps.gameObject.SetActive(true);
+                //fps.gameObject.SetActive(true);
                 fps.enabled = true;
             }
         }

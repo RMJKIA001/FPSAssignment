@@ -9,7 +9,9 @@ public class PlayerCont : MonoBehaviour {
     public Camera cam;
     private float currCam = 0;
     private float velocity = 0;
+    public bool isRunning=false;
     private CharacterController cont;
+    public Animator ani;
     // Use this for initialization
     void Start () {
         Cursor.visible = false;
@@ -18,15 +20,14 @@ public class PlayerCont : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float rotX = Input.GetAxis("Mouse X")*mouseMov;
-        float rotY = Input.GetAxis("Mouse Y")*mouseMov;
-        transform.Rotate(0,rotX,0);
         
-        currCam -= rotY ;
-        float newRot = Mathf.Clamp(currCam,-50,50);
-        cam.transform.localRotation = Quaternion.Euler(newRot, 0, 0);
-        //cam.transform.Rotate(-newRot,0,0);
+        float rotX = Input.GetAxis("Mouse X") * mouseMov;
+        float rotY = Input.GetAxis("Mouse Y") * mouseMov;
+        transform.Rotate(0, rotX, 0);
 
+        currCam -= rotY;
+        float newRot = Mathf.Clamp(currCam, -50, 50);
+        cam.transform.localRotation = Quaternion.Euler(newRot, 0, 0);
 
 
         float vert = Input.GetAxis("Vertical");
@@ -35,7 +36,10 @@ public class PlayerCont : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftShift) )
         {
             vert *= 2f ;
+            isRunning = true;
         }
+
+        else { isRunning = false; }
         if (Input.GetButtonDown("Jump") && cont.isGrounded)
         {
             velocity = jumpSpeed;
