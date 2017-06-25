@@ -47,7 +47,9 @@ public class PlayerCont : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && cont.isGrounded)
         {
             velocity = jumpSpeed;
+            //ani.SetBool("Jump", true);
         }
+        //ani.SetBool("Jump", false);
         Vector3 move = new Vector3(hori*speed, velocity, vert*speed); 
         cont.Move(transform.rotation*move*Time.deltaTime);
         animate(isWalking);

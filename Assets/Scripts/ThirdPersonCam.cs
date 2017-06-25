@@ -23,10 +23,10 @@ public class ThirdPersonCam : MonoBehaviour {
     {
         Vector3 dir = new Vector3(0,0, -distance);
         Quaternion rot = Quaternion.Euler(0, currX, 0);
-        Vector3 moveUp = new Vector3(0, distance / 3, 0);
+        Vector3 moveUp = new Vector3(0,1.8f, 0);
 
-        cam.transform.position = lookAt.position + rot*dir + moveUp;
-
+        cam.transform.position = lookAt.position + rot*dir +moveUp;
+        cam.transform.forward = dir;
         cam.transform.LookAt(lookAt.position);
         
     }
