@@ -6,7 +6,7 @@ using UnityEngine;
 public class Shootable : MonoBehaviour {
 
     public int currentHealth = 2;
-    public Text ScoreText;
+    public TextMesh ScoreText;
     public GameObject ps;
     public GameObject hit;
     public void Damage(int damageAmount)
