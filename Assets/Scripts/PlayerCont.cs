@@ -19,7 +19,7 @@ public class PlayerCont : MonoBehaviour {
     public  AudioClip shot;
 
     public int damage = 1;
-    public float rate = 0.5f;
+    public float rate = 0.25f;
     public float range = 50f;
     public float hitF = 100f;
     private float nextFire;

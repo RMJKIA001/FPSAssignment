@@ -5,10 +5,10 @@ using UnityEngine;
 public class FirstCam : MonoBehaviour {
     public Transform lookAt;
     public GameObject canvas;
-    Vector3 height;
+    //Vector3 height;
 	// Use this for initialization
 	void Start () {
-        height = new Vector3 (0f, 2.68f, 0.255f);
+      //  height = new Vector3 (0f,2.6f, 0.255f);
     }
 
     // Update is called once per frame
@@ -17,6 +17,6 @@ public class FirstCam : MonoBehaviour {
         {
             canvas.SetActive(true);
         }
-        transform.position = lookAt.position  + height;	
+        //transform.position = lookAt.position  + height;	
 	}
 }
