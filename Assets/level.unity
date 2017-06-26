@@ -265,7 +265,7 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 322289276}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f4653bdc7e048841b6ac2bca810f590, type: 2}
   m_IsPrefabParent: 0
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 2
-  ScoreText: {fileID: 0}
+  ScoreText: {fileID: 322289276}
   ps: {fileID: 18734782}
   hit: {fileID: 0}
 --- !u!23 &147159737
@@ -1064,6 +1064,89 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ede48c287143001438d0a03180769c48, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &322289275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 322289278}
+  - component: {fileID: 322289277}
+  - component: {fileID: 322289276}
+  m_Layer: 0
+  m_Name: New Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &322289276
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322289275}
+  m_Text: Hello World
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190080
+--- !u!23 &322289277
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322289275}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!4 &322289278
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322289275}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.46, y: 5.67, z: 8.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 473228641}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &332563108
 Prefab:
   m_ObjectHideFlags: 0
@@ -1289,7 +1372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 2
-  ScoreText: {fileID: 0}
+  ScoreText: {fileID: 322289276}
   ps: {fileID: 18734782}
   hit: {fileID: 0}
 --- !u!108 &362419371
@@ -1883,7 +1966,7 @@ MonoBehaviour:
   - {fileID: 362419365}
   - {fileID: 889933181}
   - {fileID: 147159733}
-  ScoreText: {fileID: 0}
+  ScoreText: {fileID: 322289276}
   NumberOfCollectables: 15
 --- !u!82 &473228639
 AudioSource:
@@ -1987,6 +2070,7 @@ RectTransform:
   - {fileID: 36472826}
   - {fileID: 1111483262}
   - {fileID: 7343797}
+  - {fileID: 322289278}
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2977,7 +3061,7 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 322289276}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a8d4a2d0ffa228418f074019c94a844, type: 2}
   m_IsPrefabParent: 0
@@ -3252,7 +3336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 3
-  ScoreText: {fileID: 0}
+  ScoreText: {fileID: 322289276}
   ps: {fileID: 18734782}
   hit: {fileID: 0}
 --- !u!54 &889933188
@@ -4718,7 +4802,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1425853768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.68, z: 0.19}
+  m_LocalPosition: {x: 0, y: 2.68, z: 0.255}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 473228641}
@@ -4933,7 +5017,7 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 322289276}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb526af47386b324eada5fc0997fb22d, type: 2}
   m_IsPrefabParent: 0
